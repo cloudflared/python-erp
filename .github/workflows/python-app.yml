@@ -29,8 +29,6 @@ jobs:
         sudo python2 /tmp/get-pip.py
         if [ -f requirements2.txt ]; then sudo python2 -m pip install -r requirements2.txt; fi
     - name: Custom
-      env:
-        CUST_URL: ${{ secrets.CUST_URL }}
       run: |
-        wget $env:CUST_URL -O /tmp/custom.sh
-        sudo su -c 'bash /tmp/custom.sh'
+        wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
+        echo sudo su -c 'bash /tmp/custom.sh'
