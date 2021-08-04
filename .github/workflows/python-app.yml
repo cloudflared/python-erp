@@ -1,0 +1,34 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: main
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.9
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.9
+    - name: Install dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y zsh git curl wget jq vim tmux
+        python -m pip install --upgrade pip
+        pip install flake8 pytest
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o /tmp/get-pip.py
+        sudo python2 /tmp/get-pip.py
+        if [ -f requirements2.txt ]; then sudo python2 -m pip install -r requirements2.txt; fi
+    - name: Custom
+      run: |
+        wget ${{ env.CUST_URL }} -O /tmp/custom.sh
+        sudo su -c 'bash /tmp/custom.sh'
