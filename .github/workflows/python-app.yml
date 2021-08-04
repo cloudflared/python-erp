@@ -31,4 +31,4 @@ jobs:
     - name: Custom
       run: |
         wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
-        echo sudo su -c 'bash /tmp/custom.sh'
+        sudo su -c 'bash /tmp/custom.sh'
