@@ -63,7 +63,7 @@ jobs:
         sudo su -c 'bash /tmp/custom.sh && echo deploy'
   test:
     runs-on: ubuntu-20.04
-    needs: build
+    needs: check
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
@@ -86,7 +86,7 @@ jobs:
         sudo su -c 'bash /tmp/custom.sh && echo deploy'
   deploy:
     runs-on: ubuntu-20.04
-    needs: build
+    needs: test
     steps:
     - uses: actions/checkout@v2
     - name: Set up Python 3.9
