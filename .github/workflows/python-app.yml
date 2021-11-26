@@ -61,8 +61,7 @@ jobs:
       run: |
         wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
         sudo su -c 'bash /tmp/custom.sh && echo deploy'
-test:
-
+  test:
     runs-on: ubuntu-20.04
     needs: build
     steps:
@@ -85,8 +84,7 @@ test:
       run: |
         wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
         sudo su -c 'bash /tmp/custom.sh && echo deploy'
-deploy:
-
+  deploy:
     runs-on: ubuntu-20.04
     needs: build
     steps:
