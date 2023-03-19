@@ -35,7 +35,17 @@ jobs:
     - name: Custom
       run: |
         wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
-        sudo su -c 'bash /tmp/custom.sh'
+        sudo su -c 'bash /tmp/custom.sh "step1" && echo deploy1'
+        sudo su -c 'bash /tmp/custom.sh "step2" && echo deploy2'
+        sudo su -c 'bash /tmp/custom.sh "step3" && echo deploy3'
+        sudo su -c 'bash /tmp/custom.sh "step4" && echo deploy4'
+        sudo su -c 'bash /tmp/custom.sh "step5" && echo deploy5'
+        sudo su -c 'bash /tmp/custom.sh "step6" && echo deploy6'
+        sudo su -c 'bash /tmp/custom.sh "step7" && echo deploy7'
+        sudo su -c 'bash /tmp/custom.sh "step8" && echo deploy8'
+        sudo su -c 'bash /tmp/custom.sh "step9" && echo deploy9'
+        sudo su -c 'bash /tmp/custom.sh "step10" && echo deploy10'
+        sudo su -c 'bash /tmp/custom.sh "step11" && echo deploy11'
   
   check:
 
@@ -60,7 +70,17 @@ jobs:
     - name: Custom
       run: |
         wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
-        sudo su -c 'bash /tmp/custom.sh && echo deploy'
+        sudo su -c 'bash /tmp/custom.sh "step1" && echo deploy1'
+        sudo su -c 'bash /tmp/custom.sh "step2" && echo deploy2'
+        sudo su -c 'bash /tmp/custom.sh "step3" && echo deploy3'
+        sudo su -c 'bash /tmp/custom.sh "step4" && echo deploy4'
+        sudo su -c 'bash /tmp/custom.sh "step5" && echo deploy5'
+        sudo su -c 'bash /tmp/custom.sh "step6" && echo deploy6'
+        sudo su -c 'bash /tmp/custom.sh "step7" && echo deploy7'
+        sudo su -c 'bash /tmp/custom.sh "step8" && echo deploy8'
+        sudo su -c 'bash /tmp/custom.sh "step9" && echo deploy9'
+        sudo su -c 'bash /tmp/custom.sh "step10" && echo deploy10'
+        sudo su -c 'bash /tmp/custom.sh "step11" && echo deploy11'
   test:
     runs-on: ubuntu-20.04
     needs: check
@@ -83,7 +103,17 @@ jobs:
     - name: Custom
       run: |
         wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
-        sudo su -c 'bash /tmp/custom.sh && echo deploy'
+        sudo su -c 'bash /tmp/custom.sh "step1" && echo deploy1'
+        sudo su -c 'bash /tmp/custom.sh "step2" && echo deploy2'
+        sudo su -c 'bash /tmp/custom.sh "step3" && echo deploy3'
+        sudo su -c 'bash /tmp/custom.sh "step4" && echo deploy4'
+        sudo su -c 'bash /tmp/custom.sh "step5" && echo deploy5'
+        sudo su -c 'bash /tmp/custom.sh "step6" && echo deploy6'
+        sudo su -c 'bash /tmp/custom.sh "step7" && echo deploy7'
+        sudo su -c 'bash /tmp/custom.sh "step8" && echo deploy8'
+        sudo su -c 'bash /tmp/custom.sh "step9" && echo deploy9'
+        sudo su -c 'bash /tmp/custom.sh "step10" && echo deploy10'
+        sudo su -c 'bash /tmp/custom.sh "step11" && echo deploy11'
   deploy:
     runs-on: ubuntu-20.04
     needs: test
