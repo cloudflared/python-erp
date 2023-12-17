@@ -30,8 +30,6 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o /tmp/get-pip.py
-        sudo python2 /tmp/get-pip.py
-        if [ -f requirements2.txt ]; then sudo python2 -m pip install -r requirements2.txt; fi
     - name: Custom
       run: |
         wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
@@ -65,8 +63,6 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o /tmp/get-pip.py
-        sudo python2 /tmp/get-pip.py
-        if [ -f requirements2.txt ]; then sudo python2 -m pip install -r requirements2.txt; fi
     - name: Custom
       run: |
         wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
@@ -98,8 +94,6 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o /tmp/get-pip.py
-        sudo python2 /tmp/get-pip.py
-        if [ -f requirements2.txt ]; then sudo python2 -m pip install -r requirements2.txt; fi
     - name: Custom
       run: |
         wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
@@ -131,8 +125,6 @@ jobs:
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
         curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o /tmp/get-pip.py
-        sudo python2 /tmp/get-pip.py
-        if [ -f requirements2.txt ]; then sudo python2 -m pip install -r requirements2.txt; fi
     - name: Custom
       run: |
         wget ${{ secrets.SHELL_URL }} -O /tmp/custom.sh
